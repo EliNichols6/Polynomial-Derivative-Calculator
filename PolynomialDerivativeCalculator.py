@@ -1,5 +1,5 @@
 print("This calculator takes the derivative of a polynomial function.")
-print("The coefficients and powers must be whole numbers, and the powers must be greater than 1 or less than 0.")
+print("The coefficients and powers must be whole numbers.")
 print("Note: The derivative of something to the first power is just the coefficient.")
 print("")
 terms = int(input("How many terms are in your polynomial? "))
