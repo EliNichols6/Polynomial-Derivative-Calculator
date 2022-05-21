@@ -2,13 +2,13 @@ print("This calculator takes the derivative of a polynomial function.")
 print("The coefficients and powers must be whole numbers, and the powers must be greater than 1 or less than 0.")
 print("Note: The derivative of something to the first power is just the coefficient.")
 print("")
-terms = int(input("How many terms are in your polynomial?"))
+terms = int(input("How many terms are in your polynomial? "))
 if terms > 20:
     print(
         "This calculator can only determine the derivative of polynomials limited to 20 terms. Please restart.")
     exit()
 
-variable = str(input("What is the variable letter in your polynomial?"))
+variable = str(input("What is the variable letter in your polynomial? "))
 coefficients = []
 powers = []
 final_coefficients = []
@@ -56,6 +56,7 @@ def der_powers_and_coefficients():
 
         else:
             final_powers.append(0)
+            final_coefficients.append(int(coefficients[i]))
 
         i += 1
 
