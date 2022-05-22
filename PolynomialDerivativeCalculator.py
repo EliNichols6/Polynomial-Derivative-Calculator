@@ -92,8 +92,6 @@ def der_powers_and_coefficients(): # Same as old but using a for loop
 
 der_powers_and_coefficients()
 
-print(final_powers[1])
-
 def display():
     print("The derivative of the terms you inputted is:")
     for (x, y) in zip(final_powers, final_coefficients):
