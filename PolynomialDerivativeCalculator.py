@@ -1,5 +1,6 @@
+import itertools
 print("This calculator takes the derivative of a polynomial function.")
-print("The coefficients and powers must be whole numbers.")
+print("The coefficients and powers must be whole numbers, and the powers must be greater than 1 or less than 0.")
 print("Note: The derivative of something to the first power is just the coefficient.")
 print("")
 terms = int(input("How many terms are in your polynomial? "))
@@ -38,7 +39,35 @@ def terms_input():
 terms_input()
 
 
-def der_powers_and_coefficients():
+def der_powers_and_coefficients(): # Same as old but using a for loop
+
+    for (x, y) in zip(powers, coefficients):
+        if int(x) > 1:
+            n_power = int(int(x) - 1)
+            n_coefficient = int(int(x) * int(y))
+            final_powers.append(n_power)
+            final_coefficients.append(n_coefficient)
+
+
+        elif int(x) < 0:
+            n_power = int(int(x) - 1)
+            n_power = n_power * -1
+            n_coefficient = int(int(x) * int(y))
+            final_powers.append(n_power)
+            final_coefficients.append(n_coefficient)
+
+
+        else:
+            final_powers.append(0)
+            final_coefficients.append(int(y))
+
+
+
+
+
+
+
+"""def der_powers_and_coefficients(): # Old way of calculating and appending new derivative and coefficeient but using while loop
     i = 0
     while i < len(powers):
         if int(powers[i]) > 1:
@@ -59,17 +88,21 @@ def der_powers_and_coefficients():
             final_coefficients.append(int(coefficients[i]))
 
         i += 1
-
+"""
 
 der_powers_and_coefficients()
 
+print(final_powers[1])
 
 def display():
     print("The derivative of the terms you inputted is:")
-    i = 0
+    for (x, y) in zip(final_powers, final_coefficients):
+        print(str(y) + variable + "^" + str(x) + " +")
+
+    """i = 0
     while i < len(powers):
         print(str(final_coefficients[i]) + variable + "^" + str(final_powers[i]) + " +")
-        i += 1
+        i += 1"""
 
 
 display()
